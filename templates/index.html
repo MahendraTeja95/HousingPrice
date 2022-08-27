@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--====== Title ======-->
+    <title>Housing Price</title>
+    
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          input[type=submit]:hover {
+            background-color: #45a049;
+          }
+        .formmain {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    {% block content %}
+
+
+
+    <!--====== HEADER PART START ======-->
+
+
+        <div>
+            <h1>HOUSING PRICE PREDICTION</h1>
+        </div>
+        <div id="parallax" class="header-content d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="header-content-right">
+                            
+                            <div class="form-full-box">
+                
+                                <form class="formmain"  id="enquiry-form" name="passdata" action="result" method="post" >
+                                    <div class="register-form">
+                                        <div class="row">
+                                            <div class="col-12 col-xs-12 col-md-12">
+                                                <div >
+                                                    <label><i class="fas fa-user-tie"></i></label>
+                                                    <input class="form-control" name="area" placeholder="Enter Your Area" required="" type="text" autocomplete="off" minlength="4" maxlength="5">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-xs-12 col-md-12 d-flex flex-row  dropdownmenu" >
+                                               <div >
+                                                    <h5 class="form-id-name">BED ROOMS</h5>
+                                               </div>
+                                                <div class="value-enter" >
+                                                    <label><i class=""></i></label>
+                                                    <select class="" id="bedrooms"  name="bed-room" required>
+                                                        <option value=""> Select</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="NA" hidden></option>
+                                                    </select>
+                                                    <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">BATH ROOMS</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="bathroom" name="bath-room" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                                                         <option value="4">4</option>
+                                                         <option value="5">5</option>
+                                                         <option value="6">6</option>
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">STORIES</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="stories" name="stories"required>
+                                                        <option value=""> Select </option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                                                         <option value="4">4</option>
+                                                         <option value="5">5</option>
+                                                         <option value="6">6</option>
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">MAIN ROAD</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="mainroad" name="main-road" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">GUEST ROOM</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="guestroad" name="guest-room" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">BASEMENT</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="basement" name="basement" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">HOT WATER</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="hotwater" name="hot-water" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">AIR CONDITIONER</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="airconditioner " name="air-conditioner" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">PARKING</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="parking" name="parking" required>
+                                                        <option value=""> Select </option>
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">PREFAREA</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="prefarea" name="prefarea" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="0">NO</option>
+                                                         <option value="1">YES</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-12 col-xs-12 col-md-12 d-flex flex-row " >
+                                                <div >
+                                                     <h5 class="form-id-name">FURNISHING STATUS</h5>
+                                                </div>
+                                                 <div class="value-enter">
+                                                     <label><i class=""></i></label>
+                                                     <select class="" id="furnishingstatus" name="furnishing-status" required>
+                                                        <option value=""> Select </option>
+                                                         <option value="2">Furnished</option>
+                                                         <option value="3">Semi-Furnished</option>
+                                                         <option value="4">Un-Furnished</option>
+                                                         
+                                                         <option value="NA" hidden></option>
+                                                     </select>
+                                                     <span><i class="flaticon-right-arrow float-right"></i></span>
+                                                 </div>
+                                             </div>
+                                            <div class="col-12 col-xs-12 col-md-12">
+                                            
+                                                <input type="submit" class="main-btn"></a>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+ 
+                        </div> <!-- header content right -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header content -->
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+
+<body>
+  <h3>{{prediction}}</h3>
+</body>
+    
+{%endblock%}
+</body>
+
+</html>
+
+</html>
